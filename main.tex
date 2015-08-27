@@ -13,8 +13,7 @@
 %\includeonly{./content/proposal/implementation}
 %\includeonly{./content/cv/cv}
 
-% \addbibresource{./content/lit_review.bib}
-% \addbibresource{./content/biblatex-examples.bib}
+\addbibresource{./content/lit_review.bib}
 
 \begin{document}
 \input{latex/first_page.tex}
@@ -24,15 +23,17 @@
 \setcounter{section}{-1}
 \tableofcontents
 
+\let\citeBk=\cite
+\let\cite=\footcite
+
 \include{./content/participants/list}                 % the file wihtout .tex
 
 \newpage
 \section{SUMMARY}
 \label{sec:summary}
-Hiiiii \us is \ac{us} then \us is xx
 Breast cancer is the second most common cancer.
 In terms of mortality, breast cancer is the fifth most common cause of cancer death.
-However, it is ranked as the leading cause of cancer deaths among females in both western and economically developing countries~%\cite{cancerStatistics2011}.
+However, it is ranked as the leading cause of cancer deaths among females in both western and economically developing countries~\cite{cancerStatistics2011}.
 This has motivated the establishment of breast screening policies, where X-ray mammography is considered the current gold standard technique for early detection of breast cancer.
  However, this technique suffers from performance limitations due to tissue superposition which can either mimic or obscure malignant pathology.
  More over, the use of X-ray radiation needed for mammography is controversial.

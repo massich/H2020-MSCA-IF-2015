@@ -31,13 +31,55 @@
 \newpage
 \section{SUMMARY}
 \label{sec:summary}
-Breast cancer is the second most common cancer.
-In terms of mortality, breast cancer is the fifth most common cause of cancer death.
-However, it is ranked as the leading cause of cancer deaths among females in both western and economically developing countries~\cite{cancerStatistics2011}.
-This has motivated the establishment of breast screening policies, where X-ray mammography is considered the current gold standard technique for early detection of breast cancer.
- However, this technique suffers from performance limitations due to tissue superposition which can either mimic or obscure malignant pathology.
- More over, the use of X-ray radiation needed for mammography is controversial.
- For this reason other screening techniques like \us or \mri are being investigated.
+Breast cancer is the leading cause of cancer deaths among females worldwide~\cite{cancerStatistics2011}.
+This has motivated the establishment of \acp{bsp} to facilitate breast cancer detection at an early stage.
+Despite X-ray \dm is considered the gold standard technique for \bsp, other screening techniques like \us and \mri are being investigated
+to overcome \dm limitations due to tissue superposition which can either mimic or obscure malignant pathology,
+and avoid X-ray radiation all together.
+
+From the different \dm alternatives, the most promising to overcome the aforementioned limitations is \mri.
+However, \acp{nmle} lesions exhibit a heterogeneous appearance in breast \mri with high variations in kinetic characteristics and typical morphological parameters, and resulting in a lower
+reported specificity (69\%) and sensitivity (75\%) than mass-enhancing lesions.
+Combinations of morphological and temporal \acs{birads} descriptors have proven to be insufficient to aid in the automated differential diagnosis of these lesions in \cemri.
+Newest clinical studies suggest that T2-weighted image sequences and \dwi may provide additional specificity.
+
+The aim of this fellowship is to translate these findings into a new \cad system.
+%We propose to develop novel descriptors derived from the multispectral \mri data that will lead to a substantial improvement in diagnostic accuracy and efficiency and validate them in four specific experiments.
+Our hypothesis is that a combination of novel descriptors extracted from multiparametric breast \mri has the potential to substantially improve the diagnostic value of the detection and classification of \acp{nmle}.
+
+This first and novel \cad system in multiparametric breast \mri will reduce false positive recalls and thus increase specificity.
+ A reduction in recall of only 5\% would already be clinically relevant, considering the costs and patient discomfort associated with second look ultrasound examinations and biopsies.
+
+The experience of \acs{vicorob} in Breast-\cad, the preliminary studies in multispectral \mri carried out in \acs{florida} and the clinical support from \acs{udiat} guarantee the success of this project as well as the correct transfer of knowledge from the laboratory to the clinical site.
+It is also planned to commercialise the output \cad tool to clinical sites through existing medical imaging companies or via a spin-off.
+
+
+The specific aims of this proposed project are to:
+\begin{description}
+\item [Aim\,1:]
+  \hfill \\
+Develop an image regularization framework for multiparametric breast \mri that includes a novel simultaneous elastic registration and segmentation algorithm.
+  \emph{\textbf{Impact:} This methodology is fundamental for a correct image regularization and dramatically impacts the correct subsequent detection and diagnosis of \nmle lesions.}
+
+  \item [Aim\,2:]
+  \hfill \\
+  Develop and apply novel image descriptors for characterizing lesion heterogeneity in T2-weighted \mri and \dwi.
+  \emph{\textbf{Impact:} A combination of these image descriptors may increase the diagnostic value of existing \cad systems in breast \mri.}
+
+  \item [Aim\,3:]
+  \hfill \\
+    Develop spatio-temporal feature extraction algorithms in \cemri.  \emph{\textbf{Impact:} These algorithms from Aim 2 and 3 will facilitate the categorization of \acp{nmle} lesions.}
+
+  \item [Aim\,4:]
+  \hfill \\
+    Evaluation of the \cad system in terms of performance compared to trained readers and gold standard.
+    \emph{\textbf{Impact:} Radiologists can benefit from this system by reduced interobserver variation and improved interpretation of breast \acp{mri} for the presence or absence of malignant non-mass-like enhancing lesions.}
+
+  % \item [Aim\,5: ]
+  % \hfill \\
+  % \emph{\textbf{Impact:} }
+\end{description}
+
 
 %% Incldue the content without .tex extension
 % \acresetall  % reset the acronyms from the abstract

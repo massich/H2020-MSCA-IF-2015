@@ -9,14 +9,17 @@
 \usepackage{booktabs}
 \usepackage{multirow}
 \usepackage{array}
+\usepackage[table]{xcolor}
 \usepackage{csquotes}
 \usepackage{pgfgantt}
 \usepackage{titlesec} % fancy titles for sections, subsections etc..
 \usepackage{amssymb}
 %% Regular stuff
-% Todo notes
-\usepackage[table]{xcolor}
-%\usepackate{todonotes}
+
+% todo notes
+% This package has to be loaded after xcolor (take care that xcolor has to
+% before some of the other included packages)
+\usepackage{todonotes}
 
 %  The following command loads a graphics package to include images
 %  in the document. It may be necessary to specify a DVI driver option,
@@ -50,4 +53,3 @@
 
 % To create random text use lipsum
 \usepackage{lipsum}
-

@@ -1,31 +1,179 @@
 \section{EXCELLENCE}
 \label{sec:excellence}
 
-Please note that the principles of the European Charter for Researchers and Code of Conduct for the Recruitment of Researchers promoting open recruitment and attractive working conditions are expected to be endorsed and applied by all beneficiaries in the Marie Sklodowska-Curie actions.
-
 \subsection{Quality, innovative aspects and credibility of the research}
 \label{sec:quality}
+\paragraph{Introduction to breast cancer and multiparametric \acs{mri}}
 
-You should develop your proposal according to the following lines:
-\begin{itemize}
-\item Introduction, state-of-the-art, objectives and overview of the action
-\item Research methodology and approach: highlight the type of research and innovation activities proposed
-\item Originality and innovative aspects of the research programme: explain the contribution that the project is expected to make to advancements within the project field. Describe any novel concepts, approaches or methods that will be employed.
-\end{itemize}
-The text should emphasise how the high-quality, novel research is the most likely to open up the best career possibilities for the Experienced Researcher and new collaboration opportunities for the host organisation(s).
+Breast cancer is the leading cause of cancer deaths among females
+worldwide~\cite{cancerStatistics2011}. This has motivated the establishment of
+\acp{bsp} to facilitate breast cancer detection at an early stage. Despite
+X-ray \dm is considered the gold standard technique for \bsp, other screening
+techniques like \us and \mri are being investigated to overcome \dm limitations
+due to tissue superposition which can either mimic or obscure malignant
+pathology, and avoid X-ray radiation all together.
+
+Though \mri is a promising alternative to \dm, \nmle lesions exhibit
+a heterogeneous appearance in breast \mri with high variations in kinetic
+characteristics and typical morphological parameters \todo{RSFD + 07, STH + 08,
+YMK + 10}, and resulting in a lower reported specificity (69\%) and sensitivity
+(75\%) than mass-enhancing lesions\todo{VBD + 13} in \cemri.  The diagnosis of
+\nmle lesions is thus far more challenging.
+
+Malignant lesions such as \dci and \ilc commonly exhibit a segmental or linear
+enhancement pattern and benign lesions such as fibrocystic changes present as
+well a \nmle \todo{VBD + 13}.  However, a systematic classification of \nmle
+lesions is not in place. A classification of such lesions would be highly
+beneficial since they may reduce the biopsies’ numbers.  Recently, there have
+been new research initiatives to assess \nmle lesions using multiparametric
+\mri which combines T1-weighted contrast-enhanced \mri with \dwi \todo{PBH
++ 13, YMK + 10}.
+
+It was shown that the combination of morphological, functional and molecular
+information offered by multiparametric \mri improves the diagnostic accuracy of
+breast cancer diagnosis.  Another study showed that T2-weighted imaging can
+better represent the morphological features of small lesions \todo{WCH + 14}
+and combined with \dwi it increased the diagnostic performance of MRI.  \cad
+systems showed a much lower sensitivity ( 0.79 vs.
+0.97) and specificity (0.56 vs. 0.8) for \nmle lesions compared with masses and
+suggested the need for more advanced algorithms for the diagnosis of \nmle
+\todo{NNC + 10, VBD + 13, JSZ + 11, Jan11}.  Uniformity, and a clear set of
+imaging descriptors for the reporting of T2 and \dwi features of \nmle is
+lacking. Furthermore, there is no quantitative technique for how to combine the
+morphological, functional and molecular information derived from
+multiparametric imaging.
+
+
+% Combinations of morphological and temporal \acs{birads} descriptors have proven
+% to be insufficient to aid in the automated differential diagnosis of these
+% lesions in \cemri.  Newest clinical studies suggest that T2-weighted image
+% sequences and \dwi may provide additional specificity.
+
+% the aim of this fellowship is to translate these findings into a new \cad
+% system.
+% %we propose to develop novel descriptors derived from the multispectral \mri
+% %data that will lead to a substantial improvement in diagnostic accuracy and
+% %efficiency and validate them in four specific experiments.
+% our hypothesis is that a combination of novel descriptors extracted from
+% multiparametric breast \mri has the potential to substantially improve the
+% diagnostic value of the detection and classification of \acp{nmle}.
+
+% this first and novel \cad system in multiparametric breast \mri will reduce
+% false positive recalls and thus increase specificity.  a reduction in recall of
+% only 5\% would already be clinically relevant, considering the costs and
+% patient discomfort associated with second look ultrasound examinations and
+% biopsies.
+
+%  the experience of \acs{vicorob} in breast-\cad, the preliminary studies in
+%  multispectral \mri carried out in \acs{florida}\todo[fancyline]{correct
+%  florida institution name} and the clinical support from \acs{udiat} guarantee
+%  the success of this project as well as the correct transfer of knowledge from
+%  the laboratory to the clinical site.  it is also planned to commercialise the
+%  output \cad tool to clinical sites through existing medical imaging companies
+%  or via a spin-off.
+
+
+\emph{The bottleneck that remains for providing an improved differential
+diagnosis of \nmle lesions and thus contribute to advancing
+\cad systems beyond the current level are determining descriptors that
+incorporate the diagnostic information from multiparametric \mri.}
+\textbf{Our proposal to develop advanced image analysis algorithms to improve
+the differential diagnosis of the challenging \nmle lesions
+would provide the radiologist with a fast and accurate computational diagnosis
+support.}
+
+\todo[inline]{Here is missing a to state somewhere:\\ best career possibilities for the experiecned researcher and new collaboration opportunities for the host organization(s)}
+
+\paragraph{Research objectives}
+
+With the aid of this fellowship, the experience in Breast-\cad of \vicorob, the preliminary results in \cemri from \florida, and the clinical support from \udiat, we aim to encode multiparametric \mri clinical findings into a new \cad with higher specificity that will reduce the costs and patient discomfort associated with second look examinations and biopsies.
+In order to successfully achieve this purpose, the following objectives will be pursued:
+
+\begin{description}
+\item [Aim\,1: Develop a novel image regularization framework for \nmle lesions from multiparametric \mri.] \hfill \\
+  \todo{maybe make reference to ASURE project}
+  The regularization step represents a crucial step for the subsequent feature
+  extraction and classification since the images stem from heterogeneous
+  sources. A standard preprocessing step is followed by a novel joint
+  segmentation and registration algorithm. We propose a novel joint
+  segmentation and registration algorithm based on a variational model and
+  level set approach which incorporates spatial as well as temporal
+  contrast-enhanced images.\todo{maybe MRF, to link with my thesis}
+  The multiparametric images are registered such that all segmented images will
+  be in the same reference frame.
+
+  \item [Aim\,2: Identifying novel descriptors such as structure tensors and texture from T2-\mri and \ivim maps from \dwi as additional informative discriminators of \nmle lesions] \hfill \\
+    The \birads-based\todo{describe BIRADS somewhere?} features from \cemri
+    
+    proved to be insufficient to differentiate between malignant and benign for
+    \nmle lesions and therefore additional descriptors from multiparametric
+    images are needed \todo{PBH + 13}. Furthermore, the lesion heterogeneity is
+    insufficiently described by a single ADC\todo{ADC, stands for?} threshold
+    and thus more detailed structural and functional image features have to be
+    extracted from T2-\mri and \dwi. The proposed novel descriptors include the
+    additional information from multiparametric \mri and thus capture the
+    structure of the breast tissue in a unique manner like no other method
+    before.
+
+  \item [Aim\,3: Identifying novel spatio-temporal descriptors from \cemri as the most powerful discriminators of \nmle lesions]
+  \hfill \\
+
+  In the case of \nmle lesions, there is a high variance in morphological and
+  kinetic characteristics and as a consequence a high proportion of
+  false-positive diagnosis \todo{VBD + 13}. The automated extracted features
+  that have been applied to lesion characterization capture either the
+  variations in their temporal enhancement or in spatial (morphological)
+  structures or they are global features unable to describe local information.
+  To address this shortcoming we propose novel mathematical spatiotemporal
+  feature descriptors such as local velocity moments, scaling index and dynamic
+  texture derived from geometrical multiscale decomposition that are able to
+  capture the segmental, focal, linear, regional, and diffuse, and internal
+  enhancement patterns (homogeneous, heterogeneous, clumped, clustered ring
+  enhancement, dendritic), and lesion heterogeneity and will compare their
+  performance together with the features from Aim 2 regarding lesion
+  classification.
+
+  \item [Aim\,4: Validation of the proposed system in terms of performance and direct comparison
+to that of the radiologists in detecting lesions]
+  \hfill \\
+
+  Statistical methods will evaluate its performance as a stand-alone system and
+  in comparison with the radiologist’s competence. Adding novel algorithms to
+  existing techniques will create a flexible toolbox that can be applied with
+  minimal modifications to identifying other type of lesions or monitor
+  response to chemotherapy.
+
+  % \item [Aim\,5: ]
+  % \hfill \\
+  % \emph{\textbf{Impact:} }
+\end{description}
+
+\paragraph{Overview of the action}
+
+The proposed 24 month fellowship will develop advanced image analysis algorithms to address the challenge of properly diagnose \nmle lesions in \mri.
+Multiparametric \mri information will be inserted for the first time in a new \cad system using previous experience of \vicorob. Consequently the lesion detection in \cad systems will be improved, the false positive recalls reduced and thus a direct impact into society.
+
+To ensure a sufficient volume of data to develop the \cad system, a database available at \florida with more than 400 patient cases of \mri-detected \nmle lesions will be used to start the project. While, the correct performance of the \cad, clinical validation and implantation, will be achieved with the support from expert radiologists from \udiat, where 3 months secondments are planned.
+
+The new research knowledge will be disseminated through open access journals. Finally, this feasible \cad system with potential to improve breast cancer detection will be promoted in technical exhibitions, such as \ecr, in order to search for medical companies interested in distributing such tool in clinical sites. Alternative, the tool can be commercialised via a new spin-off created at \vicorob, where three spin-off companies have already been created.
+
+\paragraph{Research methodology and approach}
+\paragraph{Originality and innovative aspects of the research programme}
+
+The proposed research aims at developing an innovative and robust \cad system for the evaluation of \nmle lesions, based on multiparametric \mri; thus increasing specificity without compromising the sensitivity of \cemri.
+Our believe is that conventional \mri acquisition protocols are unable to capture the physical properties of \nmle lesions.
+Therefore, rather than trying to implement a new \cad methodology to work in regular \mri as other researcher has shown,
+our proposal tries to stablish new \mri acquisitions protocol to build multiparametric \mri and improve the breast cancer detection through finding new bio-markers that are not identifiable when using conventional imaging and implementing them as a new \cad system.
+
+Furthermore, the proposed \cad system not only will be developed in a research laboratory as observed in the literature, but it will go beyond and will be tested at the clinical facilities of \udiat to create a commercialised product. 
 
 \subsection{Clarity and quality of transfer of knowledge/training for the development of the researcher in light of the research objectives}
 \label{sec:transfer}
 
-A two way transfer of knowledge should be described (please see Section 5.2 of this Guide):
-\begin{itemize}
-\item The text must show how the Experienced Researcher will gain new knowledge from the hosting organisation(s) during the fellowship through training.
-\item These organisations may also benefit from the previous experience of the researcher. Outline the capacity for transferring the knowledge previously acquired by the researcher to the host organisation(s).
-\end{itemize}
-
 \subsection{Quality of the supervision and the hosting arrangements}
 \label{sec:supervision}
 
+\todo[inline]{to modify}
 Required sub-heading:
 \subsubsection*{Qualifications and experience of the supervisor(s)}
 

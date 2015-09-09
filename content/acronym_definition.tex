@@ -1,11 +1,46 @@
 %% Acronym definition example using glossaries package
 %% \usepackage{acro} is required
-%% 
+%%
 %% For a powerful usage of the acro package look at http://tex.stackexchange.com/questions/135975/how-to-define-an-acronym-by-using-other-acronym-and-print-the-abbreviations-toge
+%
+% \DeclareAcronym{a}{
+%   short = ABC,
+%   short-plural = AsBC,
+%   long = Acronym Beautifuly Crafted,
+%   long-plural = Acronyms Beautifuly Crafteds,
+%   cite = {acro_man_url}
+% }
+%
+
+\DeclareAcronym{mri}{
+  short = MRI,
+  long  = Magnetic Resonance Imaging
+}
+
+\DeclareAcronym{cemri}{
+  short = CE-MRI,
+  long  = Contrast-Enhanced \ac{mri}
+}
+
+\DeclareAcronym{dwi}{
+  short = DWI,
+  long  = Diffusion-Weighted Imaging
+}
 
 \DeclareAcronym{us}{
   short = US,
   long  = Ultra-Sound
+}
+
+\DeclareAcronym{nmle}{
+  short = NMLE,
+  long  = Non-mass-like enhancing
+}
+
+\DeclareAcronym{bsp}{
+  short = BSP,
+  long = Breast Screening Policy,
+  long-plural = Breast Screening Policies
 }
 
 \DeclareAcronym{cad}{
@@ -112,9 +147,19 @@ long= Breast Ultra-Sound
   long  = Fibro-Adenoma
 }
 
+\DeclareAcronym{dci}{
+  short = DCI,
+  long  = Ductal Carcinoma in Situ
+}
+
 \DeclareAcronym{dic}{
   short = DIC,
   long  = Ductal Inflating Carcinoma
+}
+
+\DeclareAcronym{dcis}{
+  short = DCIS,
+  long  = Ductal Carcinoma in Situ
 }
 
 \DeclareAcronym{ilc}{
@@ -142,3 +187,43 @@ long= Breast Ultra-Sound
   long  = Radial Basis Function
 }
 
+\DeclareAcronym{vicorob}{
+  short = ViCOROB,
+  long = Computer Vision and ROBotics
+}
+
+\DeclareAcronym{florida}{
+  short = FSU,
+  long = Florida State University
+}
+
+\DeclareAcronym{udiat}{
+  short = UDIAT,
+  long = Centre Diagn\'{o}stic\,-\,Institud Universitary Parc Taul\'i\,-\,UAB
+}
+
+\DeclareAcronym{ivim}{
+  short = IVIM,
+  long  = Intravoxel Incoherent Motion
+}
+
+\DeclareAcronym{ecr}{
+  short = ECR,
+  long  = European Congress of Radiology
+}
+
+\DeclareAcronym{udg}{
+  short = UdG,
+  long  = Universitat de Girona
+}
+
+\DeclareAcronym{maia}{
+  short = MaIA,
+  long = MedicAl Imaging and Applications
+  % http://maia-jointmaster.weebly.com/
+}
+
+\DeclareAcronym{ip}{
+  short = IP,
+  long = Intellectual Property
+}

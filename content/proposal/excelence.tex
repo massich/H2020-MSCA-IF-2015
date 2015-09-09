@@ -15,30 +15,40 @@ pathology, and avoid X-ray radiation all together.
 
 Though \mri is a promising alternative to \dm, \nmle lesions exhibit
 a heterogeneous appearance in breast \mri with high variations in kinetic
-characteristics and typical morphological parameters
-\cite{rosen2007birads,skamato2008categorization,yabuuchi2010nmle}, and have
-, and resulting in a lower reported specificity (69\%) and sensitivity
-(75$\%$) than mass-enhancing lesions\cite{Vag} in \cemri.  The diagnosis of
-\nmle lesions is thus far more challenging.
+characteristics and typical morphological parameters.
+\footcite{rosen2007birads}\textsuperscript{,}
+\footcite{sakamoto2008categorization}\textsuperscript{,}
+\footcite{yabuuchi2010nmle}
+% \cite{rosen2007birads,skamato2008categorization,yabuuchi2010nmle}
+Thus, diagnosis of \nmle lesions is thus far more challenging,
+resulting in a lower reported specificity (69\%) and sensitivity
+(75$\%$) than mass-enhancing lesions\cite{liu2013intravoxel} in \cemri.
 
 Malignant lesions such as \dci and \ilc commonly exhibit a segmental or linear
 enhancement pattern and benign lesions such as fibrocystic changes present as
-well a \nmle \cite{Vag}.  However, a systematic classification of \nmle
+well a \nmle \cite{liu2013intravoxel}.  However, a systematic classification of \nmle
 lesions is not in place. A classification of such lesions would be highly
 beneficial since they may reduce the biopsies’ numbers.  Recently, there have
 been new research initiatives to assess \nmle lesions using multiparametric
-\mri which combines T1-weighted contrast-enhanced \mri with \dwi \todo{PBH
-+ 13, YMK + 10}.
+\mri which combines T1-weighted contrast-enhanced \mri with \dwi.
+\footcite{pinker2013combined}\textsuperscript{,}
+\footcite{yabuuchi2010nmle}
 
 It was shown that the combination of morphological, functional and molecular
 information offered by multiparametric \mri improves the diagnostic accuracy of
 breast cancer diagnosis.  Another study showed that T2-weighted imaging can
-better represent the morphological features of small lesions \todo{WCH + 14}
+better represent the morphological features of small lesions
+\cite{wu2014diffusion}
 and combined with \dwi it increased the diagnostic performance of MRI.  \cad
 systems showed a much lower sensitivity ( 0.79 vs.
 0.97) and specificity (0.56 vs. 0.8) for \nmle lesions compared with masses and
-suggested the need for more advanced algorithms for the diagnosis of \nmle
-\cite{Newell,Vag,Jansen1,Jansen2}.  Uniformity, and a clear set of
+suggested the need for more advanced algorithms for the diagnosis of \nmle.
+\footcite{jansen2008dcemri}\textsuperscript{,}
+\footcite{jansen2011ductal}\textsuperscript{,}
+\footcite{liu2013intravoxel}\textsuperscript{,}
+\footcite{newell2010selection}
+% \cite{Newell,liu2013intravoxel,Jansen1,Jansen2}.
+Uniformity, and a clear set of
 imaging descriptors for the reporting of T2 and \dwi features of \nmle is
 lacking. Furthermore, there is no quantitative technique for how to combine the
 morphological, functional and molecular information derived from
@@ -108,7 +118,7 @@ In order to successfully achieve this purpose, the following objectives will be 
 
     proved to be insufficient to differentiate between malignant and benign for
     \nmle lesions and therefore additional descriptors from multiparametric
-    images are needed \todo{PBH + 13}. Furthermore, the lesion heterogeneity is
+    images are needed \cite{pinker2013combined}. Furthermore, the lesion heterogeneity is
     insufficiently described by a single ADC\todo{ADC, stands for?} threshold
     and thus more detailed structural and functional image features have to be
     extracted from T2-\mri and \dwi. The proposed novel descriptors include the
@@ -121,7 +131,7 @@ In order to successfully achieve this purpose, the following objectives will be 
 
   In the case of \nmle lesions, there is a high variance in morphological and
   kinetic characteristics and as a consequence a high proportion of
-  false-positive diagnosis \todo{VBD + 13}. The automated extracted features
+  false-positive diagnosis \cite{liu2013intravoxel}. The automated extracted features
   that have been applied to lesion characterization capture either the
   variations in their temporal enhancement or in spatial (morphological)
   structures or they are global features unable to describe local information.
@@ -151,7 +161,7 @@ to that of the radiologists in detecting lesions]
 
 \paragraph{Overview of the action}
 
-The proposed 24 month fellowship will develop advanced image analysis algorithms to address the challenge of properly diagnose \nmle lesions in \mri.
+The proposed 36 month fellowship will develop advanced image analysis algorithms to address the challenge of properly diagnose \nmle lesions in \mri.
 Multiparametric \mri information will be inserted for the first time in a new \cad system using previous experience of \vicorob. Consequently the lesion detection in \cad systems will be improved, the false positive recalls reduced and thus a direct impact into society.
 
 To ensure a sufficient volume of data to develop the \cad system, a database available at \florida with more than 400 patient cases of \mri-detected \nmle lesions will be used to start the project. While, the correct performance of the \cad, clinical validation and implantation, will be achieved with the support from expert radiologists from \udiat, where 3 months secondments are planned.

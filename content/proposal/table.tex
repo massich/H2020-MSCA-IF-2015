@@ -19,6 +19,104 @@
 %   \node[text width = 2cm]{\mri \nmle \cad};
 % \end{tikzpicture}
 
+
+
+%% Helping functions
+%
+% CAD schema
+\newcommand{\cadSchema}{
+    \begin{tikzpicture}[
+        start chain=subgroups going below,
+        start chain=groups going right,
+        every join/.style=->,
+        node distance=2mm and 1cm,
+      ]
+      \node[rectangle split,
+          rectangle split parts=3,
+          rectangle split part align={right,right,right},
+          on chain=groups,
+          join
+        ]{
+          \nodepart{one}T2W-MRI
+          \nodepart{two}DWI-MRI
+          \nodepart{three}CE-MRI
+        };
+
+        \node[on chain=groups,join,draw]{
+            \begin{tikzpicture}[
+              cadBlock/.style={
+                rounded corners, %inner sep=1pt,
+                draw, minimum height=4pt, minimum width=3cm
+             } ]
+              \node[](x){Image Regularization};
+              \node[cadBlock, below=3pt of x](a){Pre-processing};
+              \node[cadBlock, below=2pt of a](b){Segmentation};
+              \node[cadBlock, below=2pt of b](c){Registration};
+            \end{tikzpicture}
+        };
+        \node[on chain=groups,join,draw,minimum width=4cm]{
+            \begin{tikzpicture}[
+              cadBlock/.style={
+                rounded corners, %inner sep=1pt,
+                draw, minimum height=4pt, minimum width=3.5cm
+             } ]
+              \node[](x){CADx};
+              \node[cadBlock, below=3pt of x](a){Feature detection};
+              \node[cadBlock, below=2pt of a](b){Feature selection};
+              \node[cadBlock, below=2pt of b](c){Feature classification};
+            \end{tikzpicture}
+        };
+    \end{tikzpicture}
+}
+
+
+% Project Flash cards
+
+\newcommand{\impact}
+{A novel \cad improving diagnosis of \nmle breast lesions in \mri will reduce medical costs and patient disconfort associated with second look
+examinations and biopsies}
+
+\newcommand{\projectScope}
+{to develop advanced image analysis techniques for multiparametric \mri to
+improve \nmle lesions, disseminate this advances trough open journals and
+create value through \ip}
+
+\newcommand{\purpose}
+{find physical biomarkers for \nmle breast lesions in multiparametric \mri to
+develop novel \cad system}
+
+\newcommand{\team}
+{
+  \begin{compactitem}[o]
+      \item \florida
+      \item \vicorob
+      \item \udiat
+      \item Joan Massich
+  \end{compactitem}
+}
+
+\newcommand{\success}
+{The project would be considered a success if:
+  \begin{compactitem}[o]
+      \item a multiparametric \mri evaluation framework for \nmle breast lesions is set
+      \item potentialy highly citable articles are published
+      \item physical biomarkers are found
+      \item a comercializable \cad system is created
+  \end{compactitem}
+}
+
+\newcommand{\resources}
+{
+  \begin{compactitem}[o]
+      \item dataset of 400 patients
+      \item oitt
+      \item great advisors
+      \item clinical validation
+      \item creative candidate
+      \item i2cvb
+  \end{compactitem}
+}
+
 \begin{tikzpicture}[
 	scale=0.75,
 	start chain=1 going below,
@@ -71,55 +169,12 @@
 % \newcommand{\npd}[1]{\nodepart{two} \tikz \node[xx, minimum width=2cm, inner sep=0mm, text width=3cm,draw]{#1};}
 \newcommand{\npd}{\nodepart{two}}
 
-\newcommand{\impact}
-{A novel \cad improving diagnosis of \nmle breast lesions in \mri will reduce medical costs and patient disconfort associated with second look
-examinations and biopsies}
-
-\newcommand{\projectScope}
-{to develop advanced image analysis techniques for multiparametric \mri to
-improve \nmle lesions, disseminate this advances trough open journals and
-create value through \ip}
-
-\newcommand{\purpose}
-{find physical biomarkers for \nmle breast lesions in multiparametric \mri to
-develop novel \cad system}
-
-\newcommand{\team}
-{
-  \begin{compactitem}[o]
-      \item \florida
-      \item \vicorob
-      \item \udiat
-      \item Joan Massich
-  \end{compactitem}
-}
-
-\newcommand{\success}
-{The project would be considered a success if:
-  \begin{compactitem}[o]
-      \item a multiparametric \mri evaluation framework for \nmle breast lesions is set
-      \item potentialy highly citable articles are published
-      \item physical biomarkers are found
-      \item a comercializable \cad system is created
-  \end{compactitem}
-}
-
-\newcommand{\resources}
-{
-  \begin{compactitem}[o]
-      \item dataset of 400 patients
-      \item oitt
-      \item great advisors
-      \item clinical validation
-      \item creative candidate
-      \item i2cvb
-  \end{compactitem}
-}
 
 \tikzset{aBlockTitle/.style={
     rectangle split, rectangle split horizontal, rectangle split parts=3,
     rectangle split part align={left,left,left},
-    draw = black,
+    rounded corners, fill=gray!50,
+    % draw = black,
 }}
 \tikzset{aBlockAim/.style={
     rectangle split, rectangle split, rectangle split parts=2,
@@ -135,7 +190,7 @@ develop novel \cad system}
     % \node[aBlockTitle, on chain=A] (title){
     \node[aBlockTitle] (title){
       \nodepart[text width=6cm]{one}#1
-      \nodepart[text width=3cm]{two}Milestones: #2
+        \nodepart[text width=3cm]{two}\tikz{\node[fill=gray!30]{Milestones: #2};}
       \nodepart[text width=3cm]{three}Deliberable: #3
     };
 
@@ -152,6 +207,9 @@ develop novel \cad system}
 }
 
 
+%% Start the drawing
+%
+% Project flashcards
 \node [myBlock] (purpose) {Purpose \npd{\purpose}};
 \node [myBlock] (projectScope) {Scope \npd{\projectScope}};
 \node [myBlock] (impact) {Impact \npd{\impact}};
@@ -159,22 +217,39 @@ develop novel \cad system}
 \node [myBlock] (team) {Team \npd{\team}};
 \node [myBlock] (resources) {Resources \npd{\resources}};
 
-% \node [on chain=2] (aim1) at (purpose.east){};
+%
+% CAD schema
+\node[anchor=north west, xshift=2pt] (cad) at (purpose.north east){\cadSchema};
 
-\tikzset{aBlock/.style={ on chain=2, draw,}}
 
-\node[aBlock, anchor=north west, xshift=2pt] (aim1) at (purpose.north east){
-  \aimBlock{Evaluation Framework}
+%% Aim and WorkPackages
+%
+\tikzset{aBlock/.style={ on chain=2, draw, very thick, rounded corners}}
+
+%
+% Aim 1: Evaluation Benchmark
+\node[aBlock, anchor=north west, yshift=-4pt] (aim1) at (cad.south west){
+  \aimBlock{Evaluation Benchmark}
   {mst}
   {zz}
   {Cover the lack of standerized platform for testing breast lesions diagnosis when using multiparametric \mri.}
-  {Set the base for system evaluation}
-  {6}
-  {7}
+  {\begin{compactitem}[o]
+      \item Publishable dataset
+      \item Evaluation metric
+      \item MICCAI Challenge
+    \end{compactitem}}
+  {If the challenge is canceled, a local challenge will be organized at MaIA}
+  {\begin{compactitem}[o]
+      \item Benchmark for our CAD
+      \item Scientific publication likely to be highly cited
+    \end{compactitem}}
 };
 \chainin (aim1);
-\node[on chain=2,continue chain=going below ]{
-  \aimBlock{Evaluation Framework}
+
+%
+% Aim 2: 
+\node[on chain=2,continue chain=going below]{
+  \aimBlock{Title}
   {mi.st}
   {delib.}
   {aim of this block}
@@ -182,6 +257,23 @@ develop novel \cad system}
   {Riscks and alter.}
   {impact}
 };
+
+%
+% Aim 3: 
+\node[on chain=2,continue chain=going below]{
+  \aimBlock{Title}
+  {mi.st}
+  {delib.}
+  {aim of this block}
+  {Actions for this block}
+  {Riscks and alter.}
+  {impact}
+};
+
+
+
+
+
 % \aimBlock{xx}{yy}{zz}{kk}{5}{6}{7}{8}
 
 
@@ -210,7 +302,5 @@ develop novel \cad system}
 % % \node [desc, text width=3.5cm, xshift=-4.5cm] (SIS) {Safety Instrumented Systems};
 % % \node [desc, xshift=2.25cm] (IO) {I/O from Sensors};
 
-\end{tikzpicture}
-\begin{tikzpicture}
 \end{tikzpicture}
 \end{document}
